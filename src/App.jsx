@@ -4,12 +4,7 @@ import { nanoid } from "nanoid";
 
 function App() {
   const [list, setList] = useState(
-    JSON.parse(localStorage.getItem("my-key")) || [
-      { text: "a", key: nanoid() },
-      { text: "b", key: nanoid() },
-      { text: "c", key: nanoid() },
-      { text: "d", key: nanoid() },
-    ]
+    JSON.parse(localStorage.getItem("my-key")) || []
   );
   const [value, setValue] = useState("");
 
@@ -31,6 +26,7 @@ function App() {
 
   return (
     <div className="container">
+      <h1>ToDoList</h1>
       <ToDoList
         list={list}
         setList={setList}
