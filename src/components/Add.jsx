@@ -2,7 +2,7 @@ import { useState } from "react";
 
 export default function Add({ value, setValue, addList }) {
   function handleChange(e) {
-    setValue(e);
+    if (e.length < 50) setValue(e);
   }
 
   return (
